@@ -181,26 +181,23 @@ themeChoice
               <input
                 type="text"
                 placeholder="Your Name"
-                className={`w-full p-4 rounded-lg mb-5 border outline-none ${
-                  themeChoice
-                    ? "bg-white border-gray-300 text-black"
-                    : "bg-[#1E293B] border-gray-700 text-white"}`}/>
+                className={`w-full p-4 rounded-xl border transition duration-300 focus:ring-2 focus:ring-[#A855F7] focus:border-[#A855F7] outline-none ${
+                themeChoice
+                ? "bg-white border-gray-300 text-black"
+                : "bg-[#1E293B] border-gray-700 text-white"
+                }`}/>
 
               <input type="email" placeholder="Your Email"
-                className={`w-full p-4 rounded-lg mb-5 border outline-none ${
+                className={`w-full p-4 rounded-xl border mt-6 transition duration-300 focus:ring-2 focus:ring-[#A855F7] focus:border-[#A855F7] outline-none ${
+                themeChoice ? "bg-white border-gray-300 text-black": "bg-[#1E293B] border-gray-700 text-white"}`}/>
+
+              <textarea rows="6" placeholder="Your Message" className={`w-full mt-6 p-4 rounded-lg mb-6 border outline-none resize-none ${
                   themeChoice
                     ? "bg-white border-gray-300 text-black"
                     : "bg-[#1E293B] border-gray-700 text-white"
-                }`}/>
+                }`}></textarea>
 
-              <textarea rows="6" placeholder="Your Message" className={`w-full p-4 rounded-lg mb-6 border outline-none resize-none ${
-                  themeChoice
-                    ? "bg-white border-gray-300 text-black"
-                    : "bg-[#1E293B] border-gray-700 text-white"}`}></textarea>
-
-              <button
-                type="submit"
-                className="w-full bg-[#A855F7] text-white py-4 rounded-lg hover:bg-[#9333EA] transition duration-300">
+              <button type="submit" className="w-full bg-[#A855F7] text-white py-4 rounded-lg hover:bg-[#9333EA] hover:scale-105 hover:shadow-xl hover:shadow-[#A855F7]/40 transition duration-300">
                 Send Message
               </button>
             </form>

@@ -28,11 +28,14 @@ function Home() {
         <p className="mt-4 text-md">
           I build web applications and write about my learning journey in tech. I'm passionate about creating solutions that make a difference and helping others along the way.
           </p>
-          <div className="flex gap-4 mt-6">
+          <div className="flex flex-col sm:flex-row gap-4 mt-8">
             <div className="mt-6">
-          <a href="#projects" className="px-6 py-3 bg-[#A855F7] text-white rounded-lg hover:bg-[#9333EA] transition">
-            View My Projects
-          </a>
+          <a
+    href="#projects"
+    className="w-full sm:w-auto px-6 py-3 bg-[#A855F7] text-white rounded-lg hover:bg-[#9333EA] transition text-center">
+    View My Projects
+  </a>
+
         </div>
         <div className="mt-6">
           <a href="#contact" className="px-6 py-3 border-2 border-[#A855F7] text-[#7209d4] rounded-lg hover:bg-[#8852be] transition">
@@ -40,11 +43,11 @@ function Home() {
           </a> 
         </div>
         {/* <div className="mt-3">
-          <a href="contact">
-            <button className="px-6 py-3 border-2 border-[#A855F7] text-[#A855F7] rounded-lg hover:bg-[#9333EA] hover:text-white transition">
-              Contact Me
-            </button>
-          </a>
+           <a
+    href="#contact"
+    className="w-full sm:w-auto px-6 py-3 border-2 border-[#A855F7] text-[#A855F7] rounded-lg hover:bg-[#8852be] hover:text-white transition text-center">
+    Contact Me
+  </a>
         </div> */}
 
         
