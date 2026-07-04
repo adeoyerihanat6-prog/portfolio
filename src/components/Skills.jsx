@@ -18,7 +18,7 @@ function Skills() {
           Skills
         </h1>
 
-        <div className="w-28 h-1 bg-gradient-to-r from-[#A855F7] to-violet-400 rounded-full mt-3"></div>
+        <div className="w-15 h-1 bg-gradient-to-r from-[#A855F7] to-violet-400 rounded-full mt-3"></div>
 
         <p className={`mt-6 max-w-2xl leading-8 ${ themeChoice ? "text-gray-600" : "text-gray-400"}`}>
           Here are the technologies and tools I use to build modern,
