@@ -26,7 +26,7 @@ function Contact() {
             Let's connect
         </h1>
 
-        <div className="w-28 h-1 bg-gradient-to-r from-[#A855F7] to-violet-400 rounded-full mt-3"></div>
+        <div className="w-34 h-1 bg-gradient-to-r from-[#A855F7] to-violet-400 rounded-full mt-3"></div>
 
         <p
           className={`mt-6 max-w-2xl leading-8 ${
