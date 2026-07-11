@@ -35,13 +35,13 @@ https://portfolio-bay-eight-73.vercel.app
 Clone the repository:
 
 ```bash
-git clone https://github.com/adeoyerihanat6-prog/your-repository.git
+git clone https://github.com/adeoyerihanat6-prog/portfolio.git
 ```
 
 Navigate to the project folder:
 
 ```bash
-cd your-repository
+cd portfolio 
 ```
 
 Install dependencies:
@@ -60,7 +60,7 @@ npm run dev
 
 Email: adeoyerihanat6@gmail.com
 
-LinkedIn: https://linkedin.com/in/your-profile
+LinkedIn: https://www.linkedin.com/in/rihanat-adeoye-2a5059395?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
 
 GitHub: https://github.com/adeoyerihanat6-prog 
 
