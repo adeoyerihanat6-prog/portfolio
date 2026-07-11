@@ -1,16 +1,69 @@
-# React + Vite
+# 🌐 Rihanat's Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal portfolio website! This project showcases who I am, the technologies I work with, and some of the projects I've built as a frontend developer.
 
-Currently, two official plugins are available:
+## ✨ About
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+I'm Rihanat Adeoye, a frontend developer passionate about creating responsive, user-friendly, and visually appealing web applications. This portfolio serves as my online space where visitors can learn more about me, explore my projects, and connect with me.
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Responsive design
+- Modern and clean UI
+- Dark mode
+- About Me section
+- Skills showcase
+- Project gallery
+- Contact section
+- Social media links
 
-## Expanding the ESLint configuration
+## 🛠️ Built With
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- CSS3
+- JavaScript (ES6+)
+- React Icons
+- Vite
+
+
+## 🔗 Live Demo
+
+https://portfolio-bay-eight-73.vercel.app
+
+## ⚙️ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/adeoyerihanat6-prog/your-repository.git
+```
+
+Navigate to the project folder:
+
+```bash
+cd your-repository
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+## 📬 Contact
+
+Email: adeoyerihanat6@gmail.com
+
+LinkedIn: https://linkedin.com/in/your-profile
+
+GitHub: https://github.com/adeoyerihanat6-prog 
+
+## 📄 License
+
+This project is open source and available under the MIT License.
