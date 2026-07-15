@@ -4,7 +4,7 @@ Welcome to my personal portfolio website! This project showcases who I am, the t
 
 ## ✨ About
 
-I'm Rihanat Adeoye, a frontend developer passionate about creating responsive, user-friendly, and visually appealing web applications. This portfolio serves as my online space where visitors can learn more about me, explore my projects, and connect with me.
+I'm Rihanat Adeoye, a passionate Full Stack Web Developer dedicated to building modern, responsive, and user-friendly web applications. I enjoy transforming ideas into functional digital experiences by combining intuitive frontend interfaces with reliable backend solutions. This portfolio showcases my skills, projects, and journey in web development while providing a space for potential clients, collaborators, and employers to learn more about my work and connect with me.
 
 ## 🚀 Features
 
