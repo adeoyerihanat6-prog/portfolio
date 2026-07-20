@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { motion } from "framer-motion";
 import { ThemeContext } from "../MyContext";
 import { Typewriter } from "react-simple-typewriter";
+import { PiHandWavingFill } from "react-icons/pi";
 import {
   FaCss3Alt,
   FaEnvelope,
@@ -64,6 +65,19 @@ const itemVariants = {
   variants={itemVariants}
   className="text-3xl font-bold"
 >
+ <motion.div
+  animate={{
+    rotate: [0, 20, -10, 20, -5, 0],
+  }}
+  transition={{
+    duration: 1.5,
+    repeat: Infinity,
+    repeatDelay: 2,
+  }}
+  className="inline-block text-[#A855F7]"
+>
+  <PiHandWavingFill size={40} />
+</motion.div>
   Hi, I'm
 </motion.h1>
 
