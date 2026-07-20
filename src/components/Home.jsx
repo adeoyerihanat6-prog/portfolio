@@ -52,11 +52,8 @@ const itemVariants = {
   initial="hidden"
   animate="visible"
 >
-        <section
-  className={`relative overflow-hidden min-h-screen grid grid-cols-1 md:grid-cols-2 gap-16 max-w-7xl mx-auto px-6 py-20 items-center  ${
-    themeChoice ? "bg-white" : "bg-[#020617]"
-  }`}
->
+        <section id="home" className={`scroll-mt-20 min-h-screen grid grid-cols-1 md:grid-cols-2 items-center gap-16 max-w-7xl mx-auto px-6 pt-32 pb-20 md:pt-20 ${
+    themeChoice ? "bg-white" : "bg-[#020617]"}`}>
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
   <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
 
