@@ -53,7 +53,7 @@ const itemVariants = {
   animate="visible"
 >
         <section
-  className={`relative overflow-hidden min-h-screen grid grid-cols-1 md:grid-cols-2 gap-16 max-w-7xl mx-auto px-6 py-20 items-center ${
+  className={`relative overflow-hidden min-h-screen grid grid-cols-1 md:grid-cols-2 gap-16 max-w-7xl mx-auto px-6 py-20 items-center  ${
     themeChoice ? "bg-white" : "bg-[#020617]"
   }`}
 >
@@ -65,14 +65,14 @@ const itemVariants = {
        <div>
       <motion.h1
   variants={itemVariants}
-  className="text-5xl font-bold"
+  className="text-3xl font-bold"
 >
   Hi, I'm
 </motion.h1>
 
 <motion.h1
   variants={itemVariants}
-  className="text-5xl md:text-6xl font-extrabold text-[#A855F7]"
+  className="text-3xl md:text-6xl font-extrabold text-[#A855F7]"
 >
   Rihanat Adeoye
 </motion.h1>
