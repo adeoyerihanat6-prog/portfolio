@@ -1,8 +1,9 @@
-import { useContext } from "react";
+import { useContext, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { ThemeContext } from "../MyContext";
 import { FaEnvelope, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import emailjs from "@emailjs/browser"; // 1. Import EmailJS
 
 // 1. Centralized Contact Handles Array
 const CONTACT_HANDLES = [
@@ -62,11 +63,39 @@ const columnVariants = {
 
 function Contact() {
   const { themeChoice } = useContext(ThemeContext);
+  const formRef = useRef(); // 2. Reference placeholder for the form
 
-  // Form submission intercept standard layout
+  // 3. Status Tracking Hooks
+  const [isSending, setIsSending] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // Tracks 'success' or 'error'
+
+  // Form submission handler
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Connect your backend handler or EmailJS pipelines here
+    setIsSending(true);
+    setSubmitStatus(null);
+
+    // 4. Send layout to EmailJS serverless pipeline
+    // Replace placeholders with your real string keys from the dashboard
+    emailjs
+      .sendForm(
+        "service_k9z1h9y", 
+        "template_s80jfmf", 
+        formRef.current, 
+        "a-tDo9efnHJl9uuNn"
+      )
+      .then(
+        () => {
+          setIsSending(false);
+          setSubmitStatus("success");
+          formRef.current.reset(); // Safely flushes values on success
+        },
+        (error) => {
+          console.error("EmailJS Transfer Failure:", error);
+          setIsSending(false);
+          setSubmitStatus("error");
+        }
+      );
   };
 
   return (
@@ -83,7 +112,7 @@ function Contact() {
             Let's connect
           </h1>
           <div className="w-28 h-1 bg-gradient-to-r from-[#A855F7] to-violet-400 rounded-full mt-3"></div>
-          <p className={`mt-6 max-w-2xl leading-8 transition-colors duration-500 ${
+          <p className={`mt-6 max-w-2xl gamblers leading-8 transition-colors duration-500 ${
             themeChoice ? "text-gray-600" : "text-gray-400"
           }`}>
             I'm always open to discussing opportunities, collaborations, or simply connecting with fellow developers.
@@ -146,11 +175,13 @@ function Contact() {
                 : "bg-[#111827] border-gray-800/80 shadow-none"
             }`}
           >
-            <form onSubmit={handleSubmit}>
+            {/* 5. Connected reference pointer */}
+            <form ref={formRef} onSubmit={handleSubmit}>
               <div className="space-y-6">
                 <div>
                   <input
                     type="text"
+                    name="from_name" // 6. Matches template identifier
                     required
                     placeholder="Your Name"
                     className={`w-full p-4 rounded-xl border transition duration-300 focus:ring-2 focus:ring-[#A855F7]/50 focus:border-[#A855F7] outline-none ${
@@ -164,6 +195,7 @@ function Contact() {
                 <div>
                   <input
                     type="email"
+                    name="reply_to" // 6. Matches template identifier
                     required
                     placeholder="Your Email"
                     className={`w-full p-4 rounded-xl border transition duration-300 focus:ring-2 focus:ring-[#A855F7]/50 focus:border-[#A855F7] outline-none ${
@@ -177,6 +209,7 @@ function Contact() {
                 <div>
                   <textarea
                     rows="5"
+                    name="message" // 6. Matches template identifier
                     required
                     placeholder="Your Message"
                     className={`w-full p-4 rounded-xl border outline-none resize-none transition duration-300 focus:ring-2 focus:ring-[#A855F7]/50 focus:border-[#A855F7] ${
@@ -188,11 +221,29 @@ function Contact() {
                 </div>
               </div>
 
+              {/* Status Indicator Notices */}
+              {submitStatus === "success" && (
+                <p className="mt-4 text-sm font-semibold text-green-500 text-center">
+                  Message sent successfully! I'll get back to you soon. 💜
+                </p>
+              )}
+              {submitStatus === "error" && (
+                <p className="mt-4 text-sm font-semibold text-red-500 text-center">
+                  Something went wrong. Please check your network or message me directly.
+                </p>
+              )}
+
+              {/* Disabled loading protection flag toggles style automatically */}
               <button 
                 type="submit" 
-                className="w-full mt-6 bg-[#A855F7] text-white font-semibold py-4 rounded-xl hover:bg-[#9333EA] active:scale-[0.99] hover:shadow-xl hover:shadow-[#A855F7]/20 transition duration-300"
+                disabled={isSending}
+                className={`w-full mt-6 text-white font-semibold py-4 rounded-xl active:scale-[0.99] transition duration-300 ${
+                  isSending
+                    ? "bg-gray-500 cursor-not-allowed opacity-60"
+                    : "bg-[#A855F7] hover:bg-[#9333EA] hover:shadow-xl hover:shadow-[#A855F7]/20"
+                }`}
               >
-                Send Message
+                {isSending ? "Sending..." : "Send Message"}
               </button>
             </form>
           </motion.div>
