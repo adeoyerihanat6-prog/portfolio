@@ -74,7 +74,7 @@ const itemVariants = {
   variants={itemVariants}
   className="text-3xl md:text-6xl font-extrabold text-[#A855F7]"
 >
-  Rihanat Adeoye
+  Rihanat 
 </motion.h1>
 
 <motion.h2
