@@ -88,30 +88,30 @@ function Home() {
           </motion.p>
 
           {/* Action Buttons */}
-          <motion.div variants={itemVariants} className="flex flex-wrap gap-4 mt-8">
-            <a
-              href="#projects"
-              className="px-6 py-3 bg-[#A855F7] text-white font-medium rounded-lg hover:bg-[#9333EA] transform hover:-translate-y-0.5 shadow-md shadow-purple-500/20 transition duration-200 text-center"
-            >
-              View My Projects
-            </a>
+<motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 mt-8 w-full sm:w-auto">
+  <a
+    href="#projects"
+    className="w-full sm:w-auto px-6 py-3 bg-[#A855F7] text-white font-medium rounded-lg hover:bg-[#9333EA] transform hover:-translate-y-0.5 shadow-md shadow-purple-500/20 transition duration-200 text-center"
+  >
+    View My Projects
+  </a>
 
-            <a
-              href="#contact"
-              className="px-6 py-3 border-2 border-[#A855F7] text-[#A855F7] font-medium rounded-lg hover:bg-[#A855F7]/10 transform hover:-translate-y-0.5 transition duration-200 text-center"
-            >
-              Contact Me
-            </a>
+  <a
+    href="#contact"
+    className="w-full sm:w-auto px-6 py-3 border-2 border-[#A855F7] text-[#A855F7] font-medium rounded-lg hover:bg-[#A855F7]/10 transform hover:-translate-y-0.5 transition duration-200 text-center"
+  >
+    Contact Me
+  </a>
 
-            <a
-              href="/rihan_cv.pdf"
-              download="Rihanat_Adeoye_CV.pdf"
-              className="px-6 py-3 bg-transparent border-2 border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-300 font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transform hover:-translate-y-0.5 transition duration-200 text-center"
-              aria-label="Download CV"
-            >
-              Download CV
-            </a>
-          </motion.div>
+  <a
+    href="/rihan_cv.pdf"
+    download="Rihanat_Adeoye_CV.pdf"
+    className="w-full sm:w-auto px-6 py-3 bg-transparent border-2 border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-300 font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transform hover:-translate-y-0.5 transition duration-200 text-center"
+    aria-label="Download CV"
+  >
+    Download CV
+  </a>
+</motion.div>
 
           {/* Social Links */}
           <motion.div variants={itemVariants} className="flex flex-wrap gap-5 mt-8">
