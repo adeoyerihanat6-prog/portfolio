@@ -3,7 +3,13 @@ import { ThemeContext } from "../MyContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
-
+import {
+  HiHome,
+  HiUser,
+  HiFolderOpen,
+  HiCode,
+  HiMail,
+} from "react-icons/hi";
 function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -123,59 +129,132 @@ function Navbar() {
       </motion.nav>
 
       {/* Dark Overlay */}
-      {open && (
-        <div
-          className="fixed inset-0 bg-black/60 z-40 md:hidden"
-          onClick={() => setOpen(false)}
-        ></div>
-      )}
-
-      {/* Sidebar */}
-      <div
-        className={`fixed top-0 right-0 h-screen w-72 z-50 shadow-2xl ${
-          themeChoice
-            ? "bg-white text-gray-700" : "bg-[#0F172A] text-white"
-        } transform transition-transform duration-300 ${
-          open ? "translate-x-0" : "translate-x-full"
-        } md:hidden`}
-      >
-        {/* Sidebar Header */}
-        <div className="flex justify-between items-center p-5 border-b border-[#A855F7]/20">
-          <h2 className="text-2xl font-bold text-[#A855F7]">
-            Menu
-          </h2>
-
-          <button
+            {/* Overlay */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden"
             onClick={() => setOpen(false)}
-            className="text-3xl"
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Mobile Sidebar */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{
+              type: "spring",
+              stiffness: 280,
+              damping: 25,
+            }}
+            className={`fixed top-0 right-0 h-screen w-72 z-50 shadow-2xl ${
+              themeChoice
+                ? "bg-white text-gray-700"
+                : "bg-[#0F172A] text-white"
+            } md:hidden`}
           >
-            ✕
-          </button>
-        </div>
+            {/* Sidebar Header */}
+            <div className="flex justify-between items-center p-5 border-b border-[#A855F7]/20">
+              <div>
+                <h2 className="text-2xl font-bold text-[#A855F7]">
+                  &lt;RC/&gt;
+                </h2>
 
-        {/* Sidebar Links */}
-        <div className="flex flex-col gap-8 px-6 mt-10 text-lg font-medium">
-          <a href="#home" onClick={() => setOpen(false)}>
-            Home
-          </a>
+                <p className="text-sm text-gray-400">
+                  RihannahCodes
+                </p>
+              </div>
 
-          <a href="#about" onClick={() => setOpen(false)}>
-            About
-          </a>
+              <motion.button
+                whileHover={{ rotate: 90 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => setOpen(false)}
+                className="text-3xl"
+              >
+                ✕
+              </motion.button>
+            </div>
 
-          <a href="#projects" onClick={() => setOpen(false)}>
-            Projects
-          </a>
+            {/* Sidebar Links */}
+            <div className="flex flex-col gap-8 px-6 mt-10 text-lg font-medium">
 
-          <a href="#skills" onClick={() => setOpen(false)}>
-            Skills
-          </a>
+              <motion.a
+  href="#home"
+  onClick={() => setOpen(false)}
+  initial={{ x: 30, opacity: 0 }}
+  animate={{ x: 0, opacity: 1 }}
+  transition={{ delay: 0.1 }}
+  whileHover={{ x: 10 }}
+  className="flex items-center gap-3 hover:text-[#A855F7] transition-colors"
+>
+  <HiHome className="text-xl" />
+  Home
+</motion.a>
 
-          <a href="#contact" onClick={() => setOpen(false)}>
-            Contact
-          </a>
-        </div>
-      </div>
+              <motion.a
+  href="#about"
+  onClick={() => setOpen(false)}
+  initial={{ x: 30, opacity: 0 }}
+  animate={{ x: 0, opacity: 1 }}
+  transition={{ delay: 0.2 }}
+  whileHover={{ x: 10 }}
+  className="flex items-center gap-3 hover:text-[#A855F7] transition-colors"
+>
+  <HiUser className="text-xl" />
+  About
+</motion.a>
+
+              <motion.a
+  href="#projects"
+  onClick={() => setOpen(false)}
+  initial={{ x: 30, opacity: 0 }}
+  animate={{ x: 0, opacity: 1 }}
+  transition={{ delay: 0.3 }}
+  whileHover={{ x: 10 }}
+  className="flex items-center gap-3 hover:text-[#A855F7] transition-colors"
+>
+  <HiFolderOpen className="text-xl" />
+  Projects
+</motion.a>
+
+             <motion.a
+  href="#skills"
+  onClick={() => setOpen(false)}
+  initial={{ x: 30, opacity: 0 }}
+  animate={{ x: 0, opacity: 1 }}
+  transition={{ delay: 0.4 }}
+  whileHover={{ x: 10 }}
+  className="flex items-center gap-3 hover:text-[#A855F7] transition-colors"
+>
+  <HiCode className="text-xl" />
+  Skills
+</motion.a>
+
+              <motion.a
+  href="#contact"
+  onClick={() => setOpen(false)}
+  initial={{ x: 30, opacity: 0 }}
+  animate={{ x: 0, opacity: 1 }}
+  transition={{ delay: 0.5 }}
+  whileHover={{ x: 10 }}
+  className="flex items-center gap-3 hover:text-[#A855F7] transition-colors"
+>
+  <HiMail className="text-xl" />
+  Contact
+</motion.a>
+
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
