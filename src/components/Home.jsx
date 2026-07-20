@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { motion } from "framer-motion";
 import { ThemeContext } from "../MyContext";
 import { Typewriter } from "react-simple-typewriter";
-import { PiHandWavingFill } from "react-icons/pi";
+
 import {
   FaCss3Alt,
   FaEnvelope,
@@ -53,31 +53,20 @@ const itemVariants = {
   initial="hidden"
   animate="visible"
 >
-        <section id="home" className={`scroll-mt-20 min-h-screen grid grid-cols-1 md:grid-cols-2 items-center gap-16 max-w-7xl mx-auto px-6 pt-32 pb-20 md:pt-20 ${
-    themeChoice ? "bg-white" : "bg-[#020617]"}`}>
+      <section
+  id="home"
+  className={`relative scroll-mt-20 min-h-screen grid grid-cols-1 md:grid-cols-2 items-center gap-16 max-w-7xl mx-auto px-6 pt-32 pb-20 md:pt-20 ${
+    themeChoice ? "bg-white" : "bg-[#020617]"
+  }`}
+>
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-  <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
 
-  <div className="absolute bottom-20 right-10 w-96 h-96 bg-fuchsia-500/10 rounded-full blur-3xl animate-pulse"></div>
 </div>
        <div>
       <motion.h1
   variants={itemVariants}
-  className="text-3xl font-bold"
->
- <motion.div
-  animate={{
-    rotate: [0, 20, -10, 20, -5, 0],
-  }}
-  transition={{
-    duration: 1.5,
-    repeat: Infinity,
-    repeatDelay: 2,
-  }}
-  className="inline-block text-[#A855F7]"
->
-  <PiHandWavingFill size={40} />
-</motion.div>
+  className="text-3xl font-bold">
+ 
   Hi, I'm
 </motion.h1>
 
@@ -90,8 +79,7 @@ const itemVariants = {
 
 <motion.h2
   variants={itemVariants}
-  className="text-2xl md:text-3xl font-semibold mt-4"
->
+  className="text-2xl md:text-3xl font-semibold mt-4">
   <span className="text-white">
     I'm a{" "}
   </span>
@@ -212,7 +200,7 @@ const itemVariants = {
     repeat: Infinity,
     duration: 1.5,
   }}
-  className="absolute bottom-6 left-1/2 -translate-x-1/2"
+  className="hidden md:block absolute bottom-8 left-1/2 -translate-x-1/2"
 >
   <div className="w-6 h-10 border-2 border-[#A855F7] rounded-full flex justify-center">
     <div className="w-1 h-3 bg-[#A855F7] rounded-full mt-2"></div>
