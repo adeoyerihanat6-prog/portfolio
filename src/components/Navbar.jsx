@@ -1,67 +1,126 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { ThemeContext } from "../MyContext";
+import { motion, AnimatePresence } from "framer-motion";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import { IoClose } from "react-icons/io5";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const { toggleTheme, themeChoice } = useContext(ThemeContext);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const links = [
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "Projects", href: "#projects" },
+    { name: "Skills", href: "#skills" },
+    { name: "Contact", href: "#contact" },
+  ];
+
+  const NavLink = ({ href, children }) => (
+    <a
+      href={href}
+      className="
+      relative
+      font-medium
+      transition-all
+      duration-300
+      hover:text-[#A855F7]
+      after:absolute
+      after:left-0
+      after:-bottom-1
+      after:h-[2px]
+      after:w-0
+      after:bg-[#A855F7]
+      after:transition-all
+      after:duration-300
+      hover:after:w-full
+      "
+    >
+      {children}
+    </a>
+  );
+
   return (
     <>
-      {/* Navbar */}
-      <nav
-        className={`fixed top-0 left-0 w-full z-50 backdrop-blur-md border-b ${
-          themeChoice
-            ? "bg-white/90 border-gray-200 text-gray-700"
-            : "bg-[#020617]/95 border-[#A855F7]/10 text-white"
+      <motion.nav
+        initial={{ y: -80 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6 }}
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+          scrolled
+            ? themeChoice
+              ? "bg-white/80 backdrop-blur-xl shadow-lg"
+              : "bg-[#020617]/80 backdrop-blur-xl shadow-lg border-b border-[#A855F7]/20"
+            : "bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-          {/* Logo */}
-          <h1 className="text-3xl font-bold text-[#A855F7]">
-            Rihanat
-          </h1>
+        <div
+          className={`max-w-7xl mx-auto flex items-center justify-between px-6 transition-all duration-300 ${
+            scrolled ? "py-3" : "py-5"
+          }`}
+        >
+          {/* LOGO */}
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8 font-medium">
-            <a href="#home" className="hover:text-[#A855F7] transition">
-              Home
-            </a>
+          <motion.a
+            href="#home"
+            whileHover={{ scale: 1.05 }}
+            className="flex items-center gap-3 group"
+          >
+            <div className="h-11 w-11 rounded-xl p-7 bg-gradient-to-r from-[#A855F7] to-fuchsia-600 flex items-center justify-center shadow-lg shadow-purple-500/30 transition-all duration-300 group-hover:rotate-6">
+              <span className="font-bold text-white ">&lt;RC/&gt;</span>
+            </div>
 
-            <a href="#about" className="hover:text-[#A855F7] transition">
-              About
-            </a>
+            
+          </motion.a>
 
-            <a href="#projects" className="hover:text-[#A855F7] transition">
-              Projects
-            </a>
+          {/* Desktop */}
 
-            <a href="#skills" className="hover:text-[#A855F7] transition">
-              Skills
-            </a>
-
-            <a href="#contact" className="hover:text-[#A855F7] transition">
-              Contact
-            </a>
+          <div className="hidden md:flex items-center gap-8">
+            {links.map((link) => (
+              <NavLink key={link.name} href={link.href}>
+                {link.name}
+              </NavLink>
+            ))}
           </div>
 
-          {/* Right Side */}
-          <div className="flex items-center gap-5">
-            {/* Theme Toggle */}
-            <button
+          {/* Right */}
+
+          <div className="flex items-center gap-4">
+            <motion.button
+              whileHover={{
+                rotate: 180,
+                scale: 1.1,
+              }}
+              whileTap={{
+                scale: 0.9,
+              }}
               onClick={toggleTheme}
-              className="text-xl hover:scale-110 transition"
+              className="text-xl p-2 rounded-full hover:bg-[#A855F7]/20 transition"
             >
               {themeChoice ? "🌙" : "☀️"}
-            </button>
+            </motion.button>
 
-            {/* Mobile Menu Button */}
-            <button onClick={() => setOpen(true)} className="md:hidden text-3xl">
-              ☰
+            <button
+              onClick={() => setOpen(true)}
+              className="md:hidden text-3xl"
+            >
+              <HiOutlineMenuAlt3 />
             </button>
           </div>
         </div>
-      </nav>
+      </motion.nav>
 
       {/* Dark Overlay */}
       {open && (

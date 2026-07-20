@@ -1,33 +1,115 @@
-import { ThemeContext } from "../MyContext";
-
-
 import { useContext } from "react";
-import { FaCss3Alt, FaEnvelope,  FaGithub,  FaLinkedin, FaNodeJs, FaReact, FaWhatsapp } from "react-icons/fa";
-import { SiJavascript } from "react-icons/si";
+import { motion } from "framer-motion";
+import { ThemeContext } from "../MyContext";
+import { Typewriter } from "react-simple-typewriter";
+import {
+  FaCss3Alt,
+  FaEnvelope,
+  FaGithub,
+  FaLinkedin,
+  FaNodeJs,
+  FaReact,
+  FaWhatsapp,
+} from "react-icons/fa";
+
 import { FaXTwitter } from "react-icons/fa6";
+import { SiJavascript } from "react-icons/si";
+
 import rihan from "../assets/rihan.jpeg";
 
 
 function Home() {
+  const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: {
+    opacity: 0,
+    y: 40,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
+
   const { themeChoice } = useContext(ThemeContext);
 
   return (
-    <div >
-        <section id="home" className={`min-h-screen items-center grid grid-cols-1 md:grid-cols-2 gap-16 max-w-7xl mx-auto px-6 py-20 ${
-  themeChoice ? "bg-white" : "bg-[#020617]"}`}>
+    <motion.div
+  variants={containerVariants}
+  initial="hidden"
+  animate="visible"
+>
+        <section
+  className={`relative overflow-hidden min-h-screen grid grid-cols-1 md:grid-cols-2 gap-16 max-w-7xl mx-auto px-6 py-20 items-center ${
+    themeChoice ? "bg-white" : "bg-[#020617]"
+  }`}
+>
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+  <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+
+  <div className="absolute bottom-20 right-10 w-96 h-96 bg-fuchsia-500/10 rounded-full blur-3xl animate-pulse"></div>
+</div>
        <div>
-        <h1 className="text-5xl font-bold">
-          Hi, I'm 
-          </h1>
-        <h1 className="text-5xl font-bold text-[#A855F7]">
-          Rihanat
-          </h1>
-        <h1 className="text-3xl font-bold">
-          Aspiring Web Developer & Tech Writer
-          </h1>
-        <p className="mt-4 text-md">
-          I build web applications and write about my learning journey in tech. I'm passionate about creating solutions that make a difference and helping others along the way.
-          </p>
+      <motion.h1
+  variants={itemVariants}
+  className="text-5xl font-bold"
+>
+  Hi, I'm
+</motion.h1>
+
+<motion.h1
+  variants={itemVariants}
+  className="text-5xl md:text-6xl font-extrabold text-[#A855F7]"
+>
+  Rihanat Adeoye
+</motion.h1>
+
+<motion.h2
+  variants={itemVariants}
+  className="text-2xl md:text-3xl font-semibold mt-4"
+>
+  <span className="text-white">
+    I'm a{" "}
+  </span>
+
+  <span className="text-[#A855F7]">
+    <Typewriter
+      words={[
+        "Full Stack Developer",
+        "Frontend Developer",
+        "Tech Writer",
+      ]}
+      loop={0}
+      cursor
+      cursorStyle="|"
+      typeSpeed={80}
+      deleteSpeed={50}
+      delaySpeed={1800}
+    />
+  </span>
+</motion.h2>
+
+<motion.p
+  variants={itemVariants}
+  className="mt-6 text-lg leading-8 text-gray-400 max-w-xl"
+>
+  I build modern, responsive, and user-friendly web applications using
+  React, Node.js, Express, and MongoDB. I'm passionate about creating
+  seamless digital experiences and continuously learning new technologies.
+</motion.p>
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
             <div className="mt-6">
           <a
@@ -74,8 +156,31 @@ function Home() {
        </div>
 
         <div className="flex justify-center items-center">
-          <div className="rounded-full h-80 w-80 border-2  border-[#A855F7] relative shadow-2xl shadow-purple-400/80 scale-105 transition hover:shadow-purple-300/90  duration-300 ">
-            <img src={rihan} className="rounded-full h-80 w-80 object-cover"/>
+<div
+  className="
+    relative
+    h-80
+    w-80
+    rounded-full
+    border-2
+    border-[#A855F7]
+    shadow-2xl
+    shadow-purple-500/40
+    transition-all
+    duration-500
+    hover:shadow-purple-400/80
+  "
+>           <motion.img
+  src={rihan}
+  className="rounded-full h-80 w-80 object-cover"
+  whileHover={{
+    scale: 1.05,
+    rotate: 1,
+  }}
+  transition={{
+    duration: 0.3,
+  }}
+/>
             <div className="absolute top-12 left-0 h-12 w-12 rounded-full bg-[#A855F7] animate-pulse flex items-center justify-center">
               <FaReact className="text-cyan-400 text-4xl"/>
             </div>
@@ -90,6 +195,18 @@ function Home() {
             </div>
           </div>
         </div>
+        <motion.div
+  animate={{ y: [0, 10, 0] }}
+  transition={{
+    repeat: Infinity,
+    duration: 1.5,
+  }}
+  className="absolute bottom-6 left-1/2 -translate-x-1/2"
+>
+  <div className="w-6 h-10 border-2 border-[#A855F7] rounded-full flex justify-center">
+    <div className="w-1 h-3 bg-[#A855F7] rounded-full mt-2"></div>
+  </div>
+</motion.div>
       </section>
            
 
@@ -97,9 +214,9 @@ function Home() {
       {/* Divider */}
       <div className="h-px bg-gradient-to-r from-transparent via-[#A855F7]/40 to-transparent"></div>
 
-      {/* ABOUT */}
      
-    </div>
+     
+    </motion.div>
   )
 }
 
