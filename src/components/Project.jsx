@@ -4,6 +4,7 @@ import { ThemeContext } from "../MyContext";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import techcon1 from "../assets/techcon1.jpeg";
 import rhivelle1 from "../assets/rhivelle1.jpeg";
+import editor from "../assets/editor.png"
 
 const PROJECTS_DATA = [
   {
@@ -25,6 +26,17 @@ const PROJECTS_DATA = [
     technologies: ["React", "Node.js", "Express.js", "MongoDB Atlas", "JWT Auth"],
     demoUrl: "https://loan-frontend-olive.vercel.app",
     githubUrl: "https://github.com/adeoyerihanat6-prog/loan-frontend",
+  },
+
+  {
+    id: "portfolio",
+    title: "AI Video Editor Portfolio",
+    category: "Frontend",
+    image: editor ,
+    description: "A modern portfolio website designed and developed for an AI Video edito, to showcase his work, service and digital presence through a sleek and responsive interface.",
+    technologies: ["React", "Tailwind CSS", "Framer motion", "EmailJS"],
+    demoUrl: "https://enny-s-portfolio.vercel.app",
+    githubUrl: "https://github.com/adeoyerihanat6-prog/Enny-s_Portfolio",
   },
 ];
 
