@@ -17,7 +17,7 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
-// FIX 1: Framer motion requires the transition block to be nested directly inside the animate properties, or configured inline.
+
 const floatingVariants = {
   animate: { 
     y: [0, 12, 0],
