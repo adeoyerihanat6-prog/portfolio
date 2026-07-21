@@ -7,6 +7,7 @@ import rhivelle1 from "../assets/rhivelle1.jpeg";
 import editor from "../assets/editor.png"
 import quiz from "../assets/quizappscreenshot.png"
 import quote from "../assets/quote.png"
+import decode from "../assets/decode.png"
 const PROJECTS_DATA = [
   {
     id: "techcon",
@@ -60,14 +61,14 @@ const PROJECTS_DATA = [
     githubUrl: "https://adeoyerihanat6-prog/CodeAlpha_RandomQuoteGenerator",
   },
   {
-    id: "Quote",
-    title: "Quote Haven",
+    id: "Chatbot",
+    title: "DecodeBot",
     category: "Frontend",
-    image: quote ,
-    description: "A clean and responsive quote generator built with React that fetches and displays inspiring quotes from an external API. Users can generate new quotes instantly with a single click, showcasing AI integration and dynamic content rendering.",
-    technologies: ["React", "Tailwind CSS", "JavaScript"],
-    demoUrl: "https://quote-generator-dusky-phi.vercel.app",
-    githubUrl: "https://adeoyerihanat6-prog/CodeAlpha_RandomQuoteGenerator",
+    image: decode ,
+    description: "An rule-based chatbot built with HTML, CSS and JavaScript that stimulates conversations using predefined responses. The project demonstrates JavaScript logic, DOM manipulation, event handling, and responsive interface design. ",
+    technologies: ["HTML5", "TCSS", "JavaScript"],
+    demoUrl: "https://decodebot-ten.vercel.app",
+    githubUrl: "https://adeoyerihanat6-prog/Decodebot",
   },
 ];
 
