@@ -5,7 +5,8 @@ import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import techcon1 from "../assets/techcon1.jpeg";
 import rhivelle1 from "../assets/rhivelle1.jpeg";
 import editor from "../assets/editor.png"
-
+import quiz from "../assets/quizappscreenshot.png"
+import quote from "../assets/quote.png"
 const PROJECTS_DATA = [
   {
     id: "techcon",
@@ -37,6 +38,36 @@ const PROJECTS_DATA = [
     technologies: ["React", "Tailwind CSS", "Framer motion", "EmailJS"],
     demoUrl: "https://enny-s-portfolio.vercel.app",
     githubUrl: "https://github.com/adeoyerihanat6-prog/Enny-s_Portfolio",
+  },
+  {
+    id: "Quiz App",
+    title: "Flashcard Quiz App",
+    category: "Frontend",
+    image: quiz ,
+    description: "A responsive flashcard study application built with React that allows users to create, edit, delete, and review custom flascards. Features intuitive navigation, answer toggling, and local storage for persistent data.",
+    technologies: ["React", "Tailwind CSS", "JavaScript"],
+    demoUrl: "https://flashcard-app-mauve-tau.vercel.app",
+    githubUrl: "https://adeoyerihanat6-prog/flashcard-quiz-app",
+  },
+  {
+    id: "Quote",
+    title: "Quote Haven",
+    category: "Frontend",
+    image: quote ,
+    description: "A clean and responsive quote generator built with React that fetches and displays inspiring quotes from an external API. Users can generate new quotes instantly with a single click, showcasing AI integration and dynamic content rendering.",
+    technologies: ["React", "Tailwind CSS", "JavaScript"],
+    demoUrl: "https://quote-generator-dusky-phi.vercel.app",
+    githubUrl: "https://adeoyerihanat6-prog/CodeAlpha_RandomQuoteGenerator",
+  },
+  {
+    id: "Quote",
+    title: "Quote Haven",
+    category: "Frontend",
+    image: quote ,
+    description: "A clean and responsive quote generator built with React that fetches and displays inspiring quotes from an external API. Users can generate new quotes instantly with a single click, showcasing AI integration and dynamic content rendering.",
+    technologies: ["React", "Tailwind CSS", "JavaScript"],
+    demoUrl: "https://quote-generator-dusky-phi.vercel.app",
+    githubUrl: "https://adeoyerihanat6-prog/CodeAlpha_RandomQuoteGenerator",
   },
 ];
 
